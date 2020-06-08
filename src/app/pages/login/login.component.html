@@ -1,1 +1,19 @@
-<p>login works!</p>
+<h1>Recetas</h1>
+
+<form class="login-body" #f="ngForm" (ngSubmit)="doLogin(f)" novalidate>
+	<mat-form-field class="login-field">
+		<mat-label>Email</mat-label>
+		<input type="email" matInput [(ngModel)]="loginData.email" [disabled]="loginSending" required name="email">
+	</mat-form-field>
+	<mat-form-field class="login-field">
+		<mat-label>Contraseña</mat-label>
+		<input matInput type="password" [(ngModel)]="loginData.pass" [disabled]="loginSending" required name="pass">
+	</mat-form-field>
+	<div class="login-error">
+		<span [ngClass]="{'show-error': loginError}">Nombre de usuario o contraseña incorrectos.</span>
+	</div>
+	<button mat-raised-button color="primary" class="login-btn" type="submit">Entrar</button>
+</form>
+
+<a [routerLink]="['/register']" class="login-link">¡Regístrate!</a>
+<a [routerLink]="['/lost-password']" class="login-link">¿Olvidaste tu contraseña?</a>

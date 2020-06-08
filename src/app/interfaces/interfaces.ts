@@ -23,3 +23,9 @@ export interface LoginResult {
 	id: number;
 	token: string;
 }
+
+export interface RegisterData {
+	name: string;
+	email: string;
+	pass: string;
+}
