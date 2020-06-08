@@ -4,8 +4,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 import { PAGES, COMPONENTS, PIPES, SERVICES, MATERIAL } from './app.common';
 
@@ -20,7 +22,9 @@ const appearance: MatFormFieldDefaultOptions = {
 		AppComponent,
 		...PAGES,
 		...COMPONENTS,
-		...PIPES
+		...PIPES,
+		RegisterComponent,
+		MainComponent
 	],
 	imports: [
 		BrowserModule,
@@ -29,7 +33,8 @@ const appearance: MatFormFieldDefaultOptions = {
 		FormsModule,
 		ReactiveFormsModule,
 		BrowserAnimationsModule,
-		...MATERIAL
+		...MATERIAL,
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 	],
 	providers: [
 		{
