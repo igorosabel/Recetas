@@ -22,9 +22,7 @@ const appearance: MatFormFieldDefaultOptions = {
 		AppComponent,
 		...PAGES,
 		...COMPONENTS,
-		...PIPES,
-		RegisterComponent,
-		MainComponent
+		...PIPES
 	],
 	imports: [
 		BrowserModule,
