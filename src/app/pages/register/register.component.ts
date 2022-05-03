@@ -67,10 +67,10 @@ export class RegisterComponent implements OnInit {
 				this.router.navigate(['/main']);
 			}
 			else {
-				if (result.status === 'name-error') {
+				if (result.status === 'error-user') {
 					this.registerNameError = true;
 				}
-				if (result.status === 'email-error') {
+				if (result.status === 'error-email') {
 					this.registerEmailError = true;
 				}
 			}
