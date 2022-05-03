@@ -29,16 +29,11 @@ export const COMPONENTS: any[] = [
 /*
  * Pipes
  */
-import { UrldecodePipe } from 'src/app/pipes/urldecode.pipe';
-
-export const PIPES: any[] = [
-	UrldecodePipe
-];
+export const PIPES: any[] = [];
 
 /*
  * Servicios
  */
-import { CommonService }      from 'src/app/services/common.service';
 import { ApiService }         from 'src/app/services/api.service';
 import { DataShareService }   from 'src/app/services/data-share.service';
 import { DialogService }      from 'src/app/services/dialog.service';
@@ -47,7 +42,6 @@ import { AuthService }        from 'src/app/services/auth.service';
 import { ClassMapperService } from 'src/app/services/class-mapper.service';
 
 export const SERVICES: any[] = [
-	CommonService,
 	ApiService,
 	DataShareService,
 	DialogService,
