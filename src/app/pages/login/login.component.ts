@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router }            from '@angular/router';
-import { NgForm }            from '@angular/forms';
-import { LoginData }         from 'src/app/interfaces/interfaces';
-import { ApiService }        from 'src/app/services/api.service';
-import { UserService }       from 'src/app/services/user.service';
-import { CommonService }     from 'src/app/services/common.service';
-import { DataShareService }  from 'src/app/services/data-share.service';
-import { AuthService }       from 'src/app/services/auth.service';
+import { Component, OnInit }  from '@angular/core';
+import { Router }             from '@angular/router';
+import { NgForm }             from '@angular/forms';
+import { LoginData }          from 'src/app/interfaces/interfaces';
+import { ApiService }         from 'src/app/services/api.service';
+import { UserService }        from 'src/app/services/user.service';
+import { AuthService }        from 'src/app/services/auth.service';
+import { ClassMapperService } from 'src/app/services/class-mapper.service';
 
 @Component({
 	selector: 'rec-login',
@@ -21,12 +20,13 @@ export class LoginComponent implements OnInit {
 	loginError: boolean = false;
 	loginSending: boolean = false;
 
-	constructor(private as: ApiService,
-				private user: UserService,
-				private cs: CommonService,
-				private router: Router,
-				private dss: DataShareService,
-				private auth: AuthService) {}
+	constructor(
+		private as: ApiService,
+		private us: UserService,
+		private router: Router,
+		private auth: AuthService,
+		private cms: ClassMapperService
+	) {}
 
 	ngOnInit(): void {
 		if (this.auth.isAuthenticated()) {
@@ -43,11 +43,9 @@ export class LoginComponent implements OnInit {
 				this.loginError = true;
 			}
 			if (result.status=='ok') {
-				this.user.logged = true;
-				this.user.id     = result.id;
-				this.user.token  = this.cs.urldecode(result.token);
-				this.user.email  = this.loginData.email;
-				this.user.saveLogin();
+				this.us.logged = true;
+				this.us.user = this.cms.getUser(result.user);
+				this.us.saveLogin();
 
 				this.router.navigate(['/main']);
 			}

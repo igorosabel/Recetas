@@ -20,12 +20,18 @@ export interface LoginData {
 
 export interface LoginResult {
 	status: string;
-	id: number;
-	token: string;
+	user: UserInterface;
 }
 
 export interface RegisterData {
 	name: string;
 	email: string;
 	pass: string;
+}
+
+export interface UserInterface {
+	id: number;
+	name: string;
+	email: string;
+	token: string;
 }
