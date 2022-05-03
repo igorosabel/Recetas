@@ -1,9 +1,9 @@
 /*
  * Páginas
  */
-import { LoginComponent }    from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { MainComponent }     from './pages/main/main.component';
+import { LoginComponent }    from 'src/app/pages/login/login.component';
+import { RegisterComponent } from 'src/app/pages/register/register.component';
+import { MainComponent }     from 'src/app/pages/main/main.component';
 
 export const PAGES: any[] = [
 	LoginComponent,
@@ -14,10 +14,10 @@ export const PAGES: any[] = [
 /*
  * Componentes
  */
-import { ConfirmDialogComponent } from './components/dialogs/confirm-dialog/confirm-dialog.component';
-import { AlertDialogComponent }   from './components/dialogs/alert-dialog/alert-dialog.component';
-import { FormDialogComponent }    from './components/dialogs/form-dialog/form-dialog.component';
-import { LoadingComponent }       from './components/loading/loading.component';
+import { ConfirmDialogComponent } from 'src/app/components/dialogs/confirm-dialog/confirm-dialog.component';
+import { AlertDialogComponent }   from 'src/app/components/dialogs/alert-dialog/alert-dialog.component';
+import { FormDialogComponent }    from 'src/app/components/dialogs/form-dialog/form-dialog.component';
+import { LoadingComponent }       from 'src/app/components/loading/loading.component';
 
 export const COMPONENTS: any[] = [
 	ConfirmDialogComponent,
@@ -29,7 +29,7 @@ export const COMPONENTS: any[] = [
 /*
  * Pipes
  */
-import { UrldecodePipe } from './pipes/urldecode.pipe';
+import { UrldecodePipe } from 'src/app/pipes/urldecode.pipe';
 
 export const PIPES: any[] = [
 	UrldecodePipe
@@ -38,12 +38,12 @@ export const PIPES: any[] = [
 /*
  * Servicios
  */
-import { CommonService }    from './services/common.service';
-import { ApiService }       from './services/api.service';
-import { DataShareService } from './services/data-share.service';
-import { DialogService }    from './services/dialog.service';
-import { UserService }    from './services/user.service';
-import { AuthService }    from './services/auth.service';
+import { CommonService }    from 'src/app/services/common.service';
+import { ApiService }       from 'src/app/services/api.service';
+import { DataShareService } from 'src/app/services/data-share.service';
+import { DialogService }    from 'src/app/services/dialog.service';
+import { UserService }      from 'src/app/services/user.service';
+import { AuthService }      from 'src/app/services/auth.service';
 
 export const SERVICES: any[] = [
 	CommonService,

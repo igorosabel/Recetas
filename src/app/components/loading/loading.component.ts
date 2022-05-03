@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class LoadingComponent {
 	@Input('big') big: boolean = false;
-	constructor() { }
+	constructor() {}
 }
