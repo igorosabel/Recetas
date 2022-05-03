@@ -34,6 +34,7 @@ export interface RegisterData {
 	name: string;
 	email: string;
 	pass: string;
+	conf: string;
 }
 
 export interface UserInterface {

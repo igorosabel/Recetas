@@ -9,3 +9,48 @@ header {
 	align-items: center;
 	padding: 0 16px;
 }
+
+.center-card {
+	max-width: 300px;
+	margin: 50px auto;
+
+	&.center-card-big {
+		width: 90%;
+		max-width: none;
+		margin: 50px auto;
+	}
+
+	.tab-icon {
+		margin-right: 8px;
+	}
+
+	.tab-top-margin {
+		margin-top: 20px;
+	}
+
+	.center-card-fields > * {
+		width: 100%;
+	}
+
+	.center-card-buttons {
+		display: flex !important;
+		justify-content: space-between;
+
+		img {
+			width: 20px;
+		}
+	}
+
+	.center-card-buttons-end {
+	  justify-content: flex-end;
+	}
+
+	.center-card-error {
+		border-radius: 6px;
+		box-sizing: border-box;
+		border-color: #f44336;
+		color: #f44336;
+		border-width: 2px;
+		margin-bottom: 1.34375em;
+	}
+}
