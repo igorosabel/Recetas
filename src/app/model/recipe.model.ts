@@ -1,25 +1,23 @@
 import { RecipeInterface } from 'src/app/interfaces/interfaces';
-import { Group } from 'src/app/model/group.model';
-import { Ingredient } from 'src/app/model/ingredient.model';
+import { RecipeIngredient } from 'src/app/model/recipe-ingredient.model';
+import { Instruction } from 'src/app/model/instruction.model';
 import { Utils } from 'src/app/model/utils.class';
 
 export class Recipe {
-	ingredients: Ingredient[] = [];
-
 	constructor(
 		public id: number = null,
 		public name: string = null,
-		public group: Group = null,
 		public time: number = null,
-		public instructions: string = null
+		public ingredients: RecipeIngredient[] = [],
+		public instructions: Instruction[] = []
 	) {}
 
 	fromInterface(r: RecipeInterface): Recipe {
 		this.id = r.id;
 		this.name = Utils.urldecode(r.name);
-		this.group = new Group().fromInterface(r.group);
 		this.time = r.time;
-		this.instructions = Utils.urldecode(r.instructions);
+		this.ingredients = r.ingredients.map((item) => { return new RecipeIngredient().fromInterface(item); });
+		this.instructions = r.instructions.map((item) => { return new Instruction().fromInterface(item); });
 
 		return this;
 	}
@@ -28,9 +26,9 @@ export class Recipe {
 		return {
 			id: this.id,
 			name: Utils.urlencode(this.name),
-			group: this.group.toInterface(),
 			time: this.time,
-			instructions: Utils.urlencode(this.instructions)
+			ingredients: this.ingredients.map((item) => { return item.toInterface(); }),
+			instructions: this.instructions.map((item) => { return item.toInterface(); })
 		};
 	}
 }

@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { User } from 'src/app/model/user.model';
-import { Group } from 'src/app/model/group.model';
-import { Unit } from 'src/app/model/unit.model';
-import { Ingredient } from 'src/app/model/ingredient.model';
-import { Meal } from 'src/app/model/meal.model';
+import { DayRecipe } from 'src/app/model/day-recipe.model';
 import { Recipe } from 'src/app/model/recipe.model';
+import { ShoppingList } from 'src/app/model/shopping-list.model';
+import { Ingredient } from 'src/app/model/ingredient.model';
 import {
 	UserInterface,
-	GroupInterface,
-	UnitInterface,
-	IngredientInterface,
-	MealInterface,
-	RecipeInterface
+	DayRecipeInterface,
+	RecipeInterface,
+	ShoppingListInterface,
+	IngredientInterface
 } from 'src/app/interfaces/interfaces';
 
 @Injectable({
@@ -24,60 +22,12 @@ export class ClassMapperService {
 		return new User().fromInterface(u);
 	}
 
-	getGroup(g: GroupInterface): Group {
-		return new Group().fromInterface(g);
+	getDayRecipe(dr: DayRecipeInterface): DayRecipe {
+		return new DayRecipe().fromInterface(dr);
 	}
 
-	getGroups(gs: GroupInterface[]): Group[] {
-		const groups: Group[] = [];
-
-		for (let g of gs) {
-			groups.push(this.getGroup(g));
-		}
-
-		return groups;
-	}
-
-	getUnit(u: UnitInterface): Unit {
-		return new Unit().fromInterface(u);
-	}
-
-	getUnits(us: UnitInterface[]): Unit[] {
-		const units: Unit[] = [];
-
-		for (let u of us) {
-			units.push(this.getUnit(u));
-		}
-
-		return units;
-	}
-
-	getIngredient(i: IngredientInterface): Ingredient {
-		return new Ingredient().fromInterface(i);
-	}
-
-	getIngredients(is: IngredientInterface[]): Ingredient[] {
-		const ingredients: Ingredient[] = [];
-
-		for (let i of is) {
-			ingredients.push(this.getIngredient(i));
-		}
-
-		return ingredients;
-	}
-
-	getMeal(m: MealInterface): Meal {
-		return new Meal().fromInterface(m);
-	}
-
-	getMeals(ms: MealInterface[]): Meal[] {
-		const meals: Meal[] = [];
-
-		for (let m of ms) {
-			meals.push(this.getMeal(m));
-		}
-
-		return meals;
+	getDayRecipes(drs: DayRecipeInterface[]): DayRecipe[] {
+		return drs.map((dr) => { return this.getDayRecipe(dr); });
 	}
 
 	getRecipe(r: RecipeInterface): Recipe {
@@ -85,12 +35,22 @@ export class ClassMapperService {
 	}
 
 	getRecipes(rs: RecipeInterface[]): Recipe[] {
-		const recipes: Recipe[] = [];
+		return rs.map((r) => { return this.getRecipe(r); });
+	}
 
-		for (let r of rs) {
-			recipes.push(this.getRecipe(r));
-		}
+	getShoppingList(sl: ShoppingListInterface): ShoppingList {
+		return new ShoppingList().fromInterface(sl);
+	}
 
-		return recipes;
+	getShoppingLists(sls: ShoppingListInterface[]): ShoppingList[] {
+		return sls.map((sl) => { return this.getShoppingList(sl); });
+	}
+
+	getIngredient(i: IngredientInterface): Ingredient {
+		return new Ingredient().fromInterface(i);
+	}
+
+	getIngredients(is: IngredientInterface[]): Ingredient[] {
+		return is.map((i) => { return this.getIngredient(i); });
 	}
 }

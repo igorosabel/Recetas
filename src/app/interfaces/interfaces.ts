@@ -28,6 +28,7 @@ export interface LoginData {
 export interface LoginResult {
 	status: string;
 	user: UserInterface;
+	dayRecipes: DayRecipeInterface[];
 }
 
 export interface RegisterData {
@@ -44,6 +45,12 @@ export interface UserInterface {
 	token: string;
 }
 
+export interface DayRecipeInterface {
+	weekDay: number;
+	meal: MealInterface;
+	recipe: RecipeInterface;
+}
+
 export interface MealInterface {
 	id: number;
 	name: string;
@@ -52,28 +59,40 @@ export interface MealInterface {
 	endTime: string;
 }
 
-export interface GroupInterface {
-	id: number;
-	name: string;
-}
-
 export interface RecipeInterface {
 	id: number;
 	name: string;
-	group: GroupInterface;
 	time: number;
-	instructions: string;
+	ingredients: RecipeIngredientInterface[];
+	instructions: InstructionInterface[];
 }
 
-export interface UnitInterface {
-	id: number;
-	name: string;
+export interface RecipeIngredientInterface {
+	ingredient: IngredientInterface;
+	order: number;
+	amount: string;
 }
 
 export interface IngredientInterface {
 	id: number;
-	amount: number;
-	unit: UnitInterface;
 	name: string;
-	group: GroupInterface;
+}
+
+export interface InstructionInterface {
+	id: number;
+	order: number;
+	type: number;
+	instruction: string;
+}
+
+export interface ShoppingListInterface {
+	id: number;
+	name: string;
+	list: ShoppingListIngredientInterface[];
+}
+
+export interface ShoppingListIngredientInterface {
+	ingredient: IngredientInterface;
+	order: number;
+	amount: number;
 }
