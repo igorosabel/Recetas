@@ -1,17 +1,19 @@
-/*
+/**
  * Páginas
  */
 import { LoginComponent }    from 'src/app/pages/login/login.component';
 import { RegisterComponent } from 'src/app/pages/register/register.component';
 import { MainComponent }     from 'src/app/pages/main/main.component';
+import { RecipeComponent }   from 'src/app/pages/recipe/recipe.component';
 
 export const PAGES: any[] = [
 	LoginComponent,
 	RegisterComponent,
-	MainComponent
+	MainComponent,
+	RecipeComponent
 ];
 
-/*
+/**
  * Componentes
  */
 import { ConfirmDialogComponent } from 'src/app/components/dialogs/confirm-dialog/confirm-dialog.component';
@@ -26,12 +28,12 @@ export const COMPONENTS: any[] = [
 	LoadingComponent
 ];
 
-/*
+/**
  * Pipes
  */
 export const PIPES: any[] = [];
 
-/*
+/**
  * Servicios
  */
 import { ApiService }         from 'src/app/services/api.service';
@@ -50,7 +52,7 @@ export const SERVICES: any[] = [
 	ClassMapperService
 ];
 
-/*
+/**
  * Componentes Angular Material
  */
 import { MatToolbarModule }     from '@angular/material/toolbar';

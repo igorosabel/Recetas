@@ -28,7 +28,6 @@ export interface LoginData {
 export interface LoginResult {
 	status: string;
 	user: UserInterface;
-	dayRecipes: DayRecipeInterface[];
 }
 
 export interface RegisterData {
@@ -36,6 +35,11 @@ export interface RegisterData {
 	email: string;
 	pass: string;
 	conf: string;
+}
+
+export interface MainResult {
+	status: string;
+	dayRecipes: DayRecipeInterface[];
 }
 
 export interface UserInterface {
