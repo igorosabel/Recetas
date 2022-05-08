@@ -41,7 +41,6 @@ export class MealsComponent {
 				this.nextDay = day +1;
 			}
 		}
-		console.log(this.previousDay, this.selectedDay, this.nextDay);
 	}
 
 	load(dayRecipes: DayRecipe[]): void {
