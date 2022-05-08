@@ -20,12 +20,14 @@ import { ConfirmDialogComponent } from 'src/app/components/dialogs/confirm-dialo
 import { AlertDialogComponent }   from 'src/app/components/dialogs/alert-dialog/alert-dialog.component';
 import { FormDialogComponent }    from 'src/app/components/dialogs/form-dialog/form-dialog.component';
 import { LoadingComponent }       from 'src/app/components/loading/loading.component';
+import { MealsComponent }         from 'src/app/components/meals/meals.component';
 
 export const COMPONENTS: any[] = [
 	ConfirmDialogComponent,
 	AlertDialogComponent,
 	FormDialogComponent,
-	LoadingComponent
+	LoadingComponent,
+	MealsComponent
 ];
 
 /**

@@ -12,7 +12,7 @@ export class DayRecipe {
 	fromInterface(dr: DayRecipeInterface): DayRecipe {
 		this.weekDay = dr.weekDay;
 		this.meal = new Meal().fromInterface(dr.meal);
-		this.recipe = new Recipe().fromInterface(dr.recipe);
+		this.recipe = (dr.recipe !== null) ? new Recipe().fromInterface(dr.recipe) : null;
 
 		return this;
 	}

@@ -10,6 +10,10 @@ export class Meal {
 		public endTime: string = null
 	) {}
 
+	get startHour(): number {
+		return parseInt(this.startTime.split(':')[0]);
+	}
+
 	fromInterface(m: MealInterface): Meal {
 		this.id = m.id;
 		this.name = Utils.urldecode(m.name);

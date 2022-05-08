@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ViewChild } from '@angular/core';
+import { MealsComponent } from 'src/app/components/meals/meals.component';
 import { ApiService } from 'src/app/services/api.service';
 import { ClassMapperService } from 'src/app/services/class-mapper.service';
 
@@ -8,6 +9,8 @@ import { ClassMapperService } from 'src/app/services/class-mapper.service';
 	styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+	@ViewChild('meals', { static: true }) meals: MealsComponent;
+
 	constructor(
 		private as: ApiService,
 		private cms: ClassMapperService
@@ -15,7 +18,7 @@ export class MainComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.as.getMainData().subscribe(result => {
-			console.log(this.cms.getDayRecipes(result.dayRecipes));
+			this.meals.load( this.cms.getDayRecipes(result.dayRecipes) );
 		});
 	}
 }
