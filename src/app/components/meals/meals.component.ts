@@ -10,6 +10,7 @@ export class MealsComponent {
 	dayRecipes: DayRecipe[] = [];
 	weekDays: string[] = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 	list: DayRecipe[][] = [];
+	selectedInd: number =  0;
 	previousDay:  number = null;
 	selectedDay: number = null;
 	nextDay: number = null;
@@ -44,13 +45,23 @@ export class MealsComponent {
 	}
 
 	load(dayRecipes: DayRecipe[]): void {
+		const currentHour: number = new Date().getHours();
+		let ind: number = -1;
 		for (let item of dayRecipes) {
+			ind = -1;
 			if (!this.list[item.weekDay]) {
 				this.list[item.weekDay] = [];
 			}
 			this.list[item.weekDay].push(item);
+			ind++;
+			if (item.weekDay === this.selectedDay && currentHour<item.meal.startHour) {
+				this.selectedInd = ind;
+			}
 		}
-
+console.log('currentHour: '+currentHour);
+console.log('selectedDay: '+this.selectedDay);
+console.log('ind: '+ind);
+console.log(this.list);
 	}
 
 	changeDay(sent: string): void {

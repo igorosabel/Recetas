@@ -1,6 +1,7 @@
 <div class="meals">
 	<div class="meal">
 		<label>{{weekDays[selectedDay]}}</label>
+		{{list[selectedDay][selectedInd].meal.id}}
 	</div>
 	<div class="controls">
 		<button mat-raised-button color="primary" (click)="changeDay('previous')">{{weekDays[previousDay]}}</button>
