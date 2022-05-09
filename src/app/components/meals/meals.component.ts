@@ -10,7 +10,7 @@ export class MealsComponent {
 	dayRecipes: DayRecipe[] = [];
 	weekDays: string[] = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
 	list: DayRecipe[][] = [];
-	selectedInd: number =  0;
+	selectedInd: number =  null;
 	previousDay:  number = null;
 	selectedDay: number = null;
 	nextDay: number = null;
@@ -48,20 +48,37 @@ export class MealsComponent {
 		const currentHour: number = new Date().getHours();
 		let ind: number = -1;
 		for (let item of dayRecipes) {
-			ind = -1;
 			if (!this.list[item.weekDay]) {
+				ind = -1;
 				this.list[item.weekDay] = [];
 			}
 			this.list[item.weekDay].push(item);
 			ind++;
-			if (item.weekDay === this.selectedDay && currentHour<item.meal.startHour) {
+			if (this.selectedInd === null && item.weekDay === this.selectedDay && currentHour<item.meal.startHour) {
 				this.selectedInd = ind;
 			}
 		}
-console.log('currentHour: '+currentHour);
-console.log('selectedDay: '+this.selectedDay);
-console.log('ind: '+ind);
-console.log(this.list);
+	}
+
+	changeMeal(sent: string): void {
+		if (sent === 'previous') {
+			if (this.selectedInd === 0) {
+				this.changeDay('previous');
+				this.selectedInd = 2;
+			}
+			else {
+				this.selectedInd--;
+			}
+		}
+		if (sent === 'next') {
+			if (this.selectedInd === 2) {
+				this.changeDay('next');
+				this.selectedInd = 0;
+			}
+			else {
+				this.selectedInd++;
+			}
+		}
 	}
 
 	changeDay(sent: string): void {
@@ -78,6 +95,7 @@ console.log(this.list);
 				day = 1;
 			}
 		}
+		this.selectedInd = 0;
 		this.calculateDays(day);
 	}
 }

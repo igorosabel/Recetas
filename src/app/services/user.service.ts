@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DataShareService } from 'src/app/services/data-share.service';
 import { User } from 'src/app/model/user.model';
 import { UserInterface } from 'src/app/interfaces/interfaces';
 
@@ -8,10 +7,11 @@ export class UserService {
 	logged: boolean = false;
 	user: User = null;
 
-	constructor(private dss: DataShareService) {}
+	constructor() {}
 
 	loadLogin(): void {
-		const loginObj: UserInterface = JSON.parse(this.dss.getGlobal('login'));
+		const loginObjStr: string = localStorage.getItem('login');
+		const loginObj: UserInterface = (loginObjStr !== null) ? JSON.parse(loginObjStr) : null;
 		if (loginObj === null) {
 			this.logout();
 		}
@@ -22,12 +22,12 @@ export class UserService {
 	}
 
 	saveLogin(): void {
-		this.dss.setGlobal('login', this.user.toInterface());
+		localStorage.setItem('login', JSON.stringify(this.user.toInterface()));
 	}
 
 	logout(): void {
 		this.logged = false;
 		this.user = null;
-		this.dss.removeGlobal('login');
+		localStorage.clear();
 	}
 }

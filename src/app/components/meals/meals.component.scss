@@ -1,0 +1,73 @@
+.meals {
+	.meal {
+		position: relative;
+		margin: 16px;
+
+		label {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			background-color: rgba(204, 204, 204, 0.6);
+			padding: 8px;
+			border-radius: 6px;
+			color: #fff;
+			letter-spacing: 2px;
+		}
+
+		.recipe {
+			
+		}
+
+		.add-recipe {
+			height: 200px;
+			border: 2px dashed #000;
+			background-color: #888;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			
+			&:hover {
+				background-color: #999;
+			}
+
+			span {
+				background-color: rgba(204, 204, 204, 0.6);
+				padding: 8px;
+				border-radius: 6px;
+				color: #fff;
+				letter-spacing: 2px;
+			}
+		}
+
+		.meal-control {
+			position: absolute;
+			top: calc(50% - 25px);
+			background-color: rgba(204, 204, 204, 0.6);
+			width: 50px;
+			height: 50px;
+			border: 0;
+			border-radius: 25px;
+			cursor: pointer;
+			
+			&:hover {
+				background-color: #999;
+			}
+			
+			&.previous-meal {
+				left: -16px;
+			}
+
+			&.next-meal {
+				right: -16px;
+			}
+		}
+	}
+
+	.controls {
+		margin: 0 16px;
+		display: flex;
+		justify-content: space-between;
+	}
+}
