@@ -23,6 +23,8 @@ import { LoadingComponent }          from 'src/app/components/loading/loading.co
 import { MealsComponent }            from 'src/app/components/meals/meals.component';
 import { RecipeListComponent }       from 'src/app/components/recipe-list/recipe-list.component';
 import { ShoppinglistListComponent } from 'src/app/components/shoppinglist-list/shoppinglist-list.component';
+import { IngredientAddComponent }    from 'src/app/components/ingredient-add/ingredient-add.component';
+import { ModalComponent }            from 'src/app/components/modal/modal.component';
 
 export const COMPONENTS: any[] = [
 	ConfirmDialogComponent,
@@ -31,7 +33,9 @@ export const COMPONENTS: any[] = [
 	LoadingComponent,
 	MealsComponent,
 	RecipeListComponent,
-	ShoppinglistListComponent
+	ShoppinglistListComponent,
+	IngredientAddComponent,
+	ModalComponent
 ];
 
 /**
@@ -48,6 +52,7 @@ import { DialogService }      from 'src/app/services/dialog.service';
 import { UserService }        from 'src/app/services/user.service';
 import { AuthService }        from 'src/app/services/auth.service';
 import { ClassMapperService } from 'src/app/services/class-mapper.service';
+import { ModalService }       from 'src/app/services/modal.service';
 
 export const SERVICES: any[] = [
 	ApiService,
@@ -55,7 +60,8 @@ export const SERVICES: any[] = [
 	DialogService,
 	UserService,
 	AuthService,
-	ClassMapperService
+	ClassMapperService,
+	ModalService
 ];
 
 /**
