@@ -1,10 +1,14 @@
 <div class="modal-container">
-	<div class="modal-body">
-		<div class="modal-header">
-			<div class="modal-handle"></div>
-		</div>
-		<div class="modal-content">
-			<ng-content></ng-content>
+	<div class="modal-body-container">
+		<div class="modal-body-move">
+			<div class="modal-body" cdkDragBoundary=".modal-body-container" cdkDragLockAxis="y" cdkDrag>
+				<div class="modal-header">
+					<div class="modal-handle" cdkDragHandle></div>
+				</div>
+				<div class="modal-content">
+					<ng-content></ng-content>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
