@@ -102,3 +102,8 @@ export interface ShoppingListIngredientInterface {
 	order: number;
 	amount: number;
 }
+
+export interface ModalPosition {
+	top: number;
+	left: number;
+}
