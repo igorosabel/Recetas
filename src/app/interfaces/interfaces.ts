@@ -40,6 +40,8 @@ export interface RegisterData {
 export interface MainResult {
 	status: string;
 	dayRecipes: DayRecipeInterface[];
+	recipes: RecipeInterface[];
+	shoppingLists: ShoppingListInterface[];
 }
 
 export interface UserInterface {

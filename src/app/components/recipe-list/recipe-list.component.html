@@ -1,0 +1,9 @@
+<mat-list>
+    <mat-list-item *ngFor="let recipe of recipes">
+		<img [src]="recipe.image" matListAvatar [alt]="recipe.name">
+        <div matLine>{{ recipe.name }}</div>
+	</mat-list-item>
+	<mat-list-item *ngIf="recipes.length === 0">
+		No hay ninguna receta todavía. ¡Crea una!
+	</mat-list-item>
+</mat-list>

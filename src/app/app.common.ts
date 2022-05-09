@@ -16,18 +16,22 @@ export const PAGES: any[] = [
 /**
  * Componentes
  */
-import { ConfirmDialogComponent } from 'src/app/components/dialogs/confirm-dialog/confirm-dialog.component';
-import { AlertDialogComponent }   from 'src/app/components/dialogs/alert-dialog/alert-dialog.component';
-import { FormDialogComponent }    from 'src/app/components/dialogs/form-dialog/form-dialog.component';
-import { LoadingComponent }       from 'src/app/components/loading/loading.component';
-import { MealsComponent }         from 'src/app/components/meals/meals.component';
+import { ConfirmDialogComponent }    from 'src/app/components/dialogs/confirm-dialog/confirm-dialog.component';
+import { AlertDialogComponent }      from 'src/app/components/dialogs/alert-dialog/alert-dialog.component';
+import { FormDialogComponent }       from 'src/app/components/dialogs/form-dialog/form-dialog.component';
+import { LoadingComponent }          from 'src/app/components/loading/loading.component';
+import { MealsComponent }            from 'src/app/components/meals/meals.component';
+import { RecipeListComponent }       from 'src/app/components/recipe-list/recipe-list.component';
+import { ShoppinglistListComponent } from 'src/app/components/shoppinglist-list/shoppinglist-list.component';
 
 export const COMPONENTS: any[] = [
 	ConfirmDialogComponent,
 	AlertDialogComponent,
 	FormDialogComponent,
 	LoadingComponent,
-	MealsComponent
+	MealsComponent,
+	RecipeListComponent,
+	ShoppinglistListComponent
 ];
 
 /**

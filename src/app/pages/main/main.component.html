@@ -1,1 +1,28 @@
 <rec-meals #meals></rec-meals>
+
+<section>
+	<header>
+		<span>Recetas</span>
+		<button mat-icon-button>
+			<mat-icon>filter_list</mat-icon>
+		</button>
+		<span class="flex-space"></span>
+		<button mat-stroked-button color="primary" class="see-all">VER TODAS</button>
+	</header>
+	<rec-recipe-list [recipes]="recipes"></rec-recipe-list>
+	<footer>
+		<button mat-raised-button color="primary">CREA UNA NUEVA RECETA</button>
+	</footer>
+</section>
+
+<section>
+	<header>
+		<span>Listas</span>
+		<span class="flex-space"></span>
+		<button mat-stroked-button color="primary" class="see-all">VER TODAS</button>
+	</header>
+	<rec-shoppinglist-list [shoppingLists]="shoppingLists"></rec-shoppinglist-list>
+	<footer>
+		<button mat-raised-button color="primary">CREA UNA NUEVA LISTA</button>
+	</footer>
+</section>

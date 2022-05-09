@@ -2,6 +2,7 @@ import { RecipeInterface } from 'src/app/interfaces/interfaces';
 import { RecipeIngredient } from 'src/app/model/recipe-ingredient.model';
 import { Instruction } from 'src/app/model/instruction.model';
 import { Utils } from 'src/app/model/utils.class';
+import { environment } from 'src/environments/environment';
 
 export class Recipe {
 	constructor(
@@ -11,6 +12,10 @@ export class Recipe {
 		public ingredients: RecipeIngredient[] = [],
 		public instructions: Instruction[] = []
 	) {}
+	
+	get image(): string {
+		return environment.imgUrl + this.id + '.webp';
+	}
 
 	fromInterface(r: RecipeInterface): Recipe {
 		this.id = r.id;
