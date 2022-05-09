@@ -1,1 +1,45 @@
-<p>recipe works!</p>
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+		<button *ngIf="mode === 'watch'" routerLink="/main" mat-icon-button>
+			<mat-icon>arrow_back</mat-icon>
+		</button>
+		<span>Nueva receta</span>
+		<span class="flex-space"></span>
+		<button *ngIf="mode === 'add'  || mode === 'edit'" routerLink="/main" mat-icon-button>
+			<mat-icon>cancel</mat-icon>
+		</button>
+		<button *ngIf="mode === 'watch'" routerLink="/main" mat-icon-button>
+			<mat-icon>share</mat-icon>
+		</button>
+		<button *ngIf="mode === 'add'  || mode === 'edit'" routerLink="/main" class="right-button" mat-icon-button>
+			<mat-icon>save</mat-icon>
+		</button>
+		<button *ngIf="mode === 'watch'" routerLink="/main" class="right-button" mat-icon-button>
+			<mat-icon>edit</mat-icon>
+		</button>
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<section>
+	<div class="add-photo"><span>Elige foto</span></div>
+</section>
+
+<section>
+	<header>
+		<span>Ingredientes</span>
+		<span class="flex-space"></span>
+		<button mat-icon-button>
+			<mat-icon>playlist_add</mat-icon>
+		</button>
+	</header>
+</section>
+
+<section>
+	<header>
+		<span>Instrucciones</span>
+		<span class="flex-space"></span>
+		<button mat-icon-button>
+			<mat-icon>playlist_add</mat-icon>
+		</button>
+	</header>
+</section>

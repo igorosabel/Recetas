@@ -1,0 +1,30 @@
+.right-button {
+	margin-left: 32px;
+}
+
+section {
+	margin: 16px;
+
+	.add-photo {
+		height: 200px;
+		border: 2px dashed #000;
+		background-color: #888;
+		border-radius: 8px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #999;
+		}
+
+		span {
+			background-color: rgba(204, 204, 204, 0.6);
+			padding: 8px;
+			border-radius: 6px;
+			color: #fff;
+			letter-spacing: 2px;
+		}
+	}
+}

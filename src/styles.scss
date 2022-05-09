@@ -3,6 +3,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.flex-space {
+	flex: 1;
+}
+
 .center-card {
 	max-width: 300px;
 	margin: 50px auto;
@@ -45,5 +49,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 		color: #f44336;
 		border-width: 2px;
 		margin-bottom: 1.34375em;
+	}
+}
+
+section {
+	margin: 16px;
+
+	header {
+		margin-bottom: 16px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 16px;
+		display: flex;
+		height: 40px;
+		align-items: center;
+
+		& > span {
+			font-size: 2.5em;
+		}
+
+		.see-all {
+			
+		}
+	}
+
+	footer {
+		button {
+			width: 100%;
+		}
 	}
 }

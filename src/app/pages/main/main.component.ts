@@ -8,7 +8,7 @@ import { ClassMapperService } from 'src/app/services/class-mapper.service';
 @Component({
 	selector: 'rec-main',
 	templateUrl: './main.component.html',
-	styleUrls: ['./main.component.scss']
+	styleUrls: []
 })
 export class MainComponent implements OnInit {
 	@ViewChild('meals', { static: true }) meals: MealsComponent;
