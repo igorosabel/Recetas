@@ -21,6 +21,10 @@ export class ModalService {
 
 		const { nativeElement } = componentRef.location;
 		this.document.body.appendChild(nativeElement);
+		setTimeout(() => {
+			componentRef.instance.mode = 'opening';
+			componentRef.hostView.detectChanges();
+		}, 100);
 	}
 
 	resolveNgContent<T>(content: Content<T>) {

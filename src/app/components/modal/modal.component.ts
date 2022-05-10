@@ -8,14 +8,18 @@ import { ModalPosition } from 'src/app/interfaces/interfaces';
 	styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
+	mode: string = 'new';
 	constructor() {}
 	ngOnInit(): void {}
 
 	onDragEnded(event: CdkDragEnd): void {
 		const element = event.source.getRootElement();
 		const boundingClientRect = element.getBoundingClientRect();
+		console.log(boundingClientRect);
 		const parentPosition = this.getPosition(element);
-		console.log('x: ' + (boundingClientRect.x - parentPosition.left), 'y: ' + (boundingClientRect.y - parentPosition.top));
+		const x: number = (boundingClientRect.x - parentPosition.left);
+		const y: number = (boundingClientRect.y - parentPosition.top);
+		console.log({x, y, top: parentPosition.top});
 	}
 
 	getPosition(el: HTMLElement): ModalPosition {
