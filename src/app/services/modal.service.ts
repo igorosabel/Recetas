@@ -1,4 +1,4 @@
-import { Injectable, ComponentFactoryResolver, Injector, Inject, TemplateRef, Type } from '@angular/core';
+import { Injectable, ComponentFactoryResolver, ComponentRef, Injector, Inject, TemplateRef, Type } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ModalComponent } from 'src/app/components/modal/modal.component';
 
@@ -15,15 +15,14 @@ export class ModalService {
 	open<T>(content: Content<T>) {
 		const factory = this.resolver.resolveComponentFactory(ModalComponent);
 		const ngContent = this.resolveNgContent(content);
-		const componentRef = factory.create(this.injector, ngContent);
+		const componentRef: ComponentRef<ModalComponent> = factory.create(this.injector, ngContent);
 
 		componentRef.hostView.detectChanges();
 
 		const { nativeElement } = componentRef.location;
 		this.document.body.appendChild(nativeElement);
 		setTimeout(() => {
-			componentRef.instance.mode = 'opening';
-			componentRef.hostView.detectChanges();
+			componentRef.instance.open(componentRef);
 		}, 100);
 	}
 

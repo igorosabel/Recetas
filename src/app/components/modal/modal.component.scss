@@ -6,6 +6,8 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	overflow: hidden;
+	
+	--animation-time: 2s;
 
 	.modal-body-container {
 		margin-top: 80px;
@@ -24,8 +26,22 @@
 				border-top-right-radius: 16px;
 
 				&.modal-body-opening {
-					transition: margin-top .4s ease-in-out;
+					transition: margin-top var(--animation-time) ease-in-out;
 					margin-top: 0;
+				}
+
+				&.modal-body-open {
+					margin-top: 0;
+				}
+
+				&.modal-body-reset {
+					margin-top: 0;
+					transition: all var(--animation-time) ease-in-out;
+				}
+
+				&.modal-body-close {
+					margin-top: 100%;
+					transition: all var(--animation-time) ease-in-out;
 				}
 
 				.modal-header {
