@@ -50,6 +50,12 @@
 					justify-content: center;
 					align-items: center;
 					border-bottom: 1px solid #ccc;
+					border-top-left-radius: 16px;
+					border-top-right-radius: 16px;
+					
+					&.modal-header-dragging {
+						background-color: #dfdfe9;
+					}
 
 					.modal-handle {
 						width: 100px;

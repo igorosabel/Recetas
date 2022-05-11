@@ -10,6 +10,7 @@ import { ModalPosition } from 'src/app/interfaces/interfaces';
 export class ModalComponent implements OnInit {
 	componentRef: ComponentRef<ModalComponent> = null;
 	mode: string = 'new';
+	dragging: boolean = false;
 	
 	animationTime: number = 2000;
 	closePercentage: number = 60;
@@ -27,12 +28,24 @@ export class ModalComponent implements OnInit {
 		}, this.animationTime);
 	}
 
-	close(): void {
+	close(ev: MouseEvent = null): void {
+		if (ev !== null) {
+			ev.preventDefault();
+			ev.stopPropagation();
+		}
 		this.mode = 'close';
 		this.componentRef.hostView.detectChanges();
 	}
 
+	onDragStart(): void {
+		console.log('drag start');
+		this.dragging = true;
+		this.componentRef.hostView.detectChanges();
+	}
+
 	onDragEnded(event: CdkDragEnd): void {
+		console.log('drag end');
+		this.dragging = false;
 		const element = event.source.getRootElement();
 		const boundingClientRect = element.getBoundingClientRect();
 		const parentPosition = this.getPosition(element);
