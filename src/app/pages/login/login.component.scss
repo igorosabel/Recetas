@@ -7,14 +7,15 @@ h1 {
 .login-body {
     padding: 32px;
     display: block;
-    width: 66%;
+    width: 90%;
     margin: 0 auto;
     border-radius: 8px;
     border: 1px solid #ccc;
+	box-sizing: border-box;
    
 	.login-field {
 		display: block;
-		width: 80%;
+		width: 100%;
 		margin: 0 auto;
 	}
 
