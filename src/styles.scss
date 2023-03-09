@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .flex-space {
 	flex: 1;
@@ -25,7 +32,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 		margin-top: 20px;
 	}
 
-	.center-card-fields > * {
+	.center-card-fields>* {
 		width: 100%;
 	}
 
@@ -39,7 +46,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 	}
 
 	.center-card-buttons-end {
-	  justify-content: flex-end;
+		justify-content: flex-end;
 	}
 
 	.center-card-error {
@@ -63,13 +70,11 @@ section {
 		height: 40px;
 		align-items: center;
 
-		& > span {
+		&>span {
 			font-size: 2.5em;
 		}
 
-		.see-all {
-			
-		}
+		.see-all {}
 	}
 
 	footer {
@@ -77,4 +82,8 @@ section {
 			width: 100%;
 		}
 	}
+}
+
+.full-width {
+	width: 100%;
 }
