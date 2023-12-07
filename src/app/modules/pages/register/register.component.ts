@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginResult, RegisterData } from 'src/app/interfaces/interfaces';
@@ -12,10 +12,10 @@ import { UserService } from 'src/app/services/user.service';
   standalone: true,
   selector: 'rec-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  styleUrls: [],
   imports: [FormsModule, MaterialModule],
 })
-export default class RegisterComponent implements OnInit {
+export default class RegisterComponent {
   registerData: RegisterData = {
     name: '',
     email: '',
@@ -34,8 +34,6 @@ export default class RegisterComponent implements OnInit {
     private router: Router,
     private cms: ClassMapperService
   ) {}
-
-  ngOnInit(): void {}
 
   doRegister(): void {
     let validate: boolean = true;

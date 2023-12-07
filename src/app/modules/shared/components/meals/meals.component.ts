@@ -62,7 +62,7 @@ export class MealsComponent {
   load(dayRecipes: DayRecipe[]): void {
     const currentHour: number = new Date().getHours();
     let ind: number = -1;
-    for (let item of dayRecipes) {
+    for (const item of dayRecipes) {
       if (!this.list[item.weekDay]) {
         ind = -1;
         this.list[item.weekDay] = [];

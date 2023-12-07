@@ -1,34 +1,40 @@
 <mat-toolbar color="primary">
 	<mat-toolbar-row>
-		<button *ngIf="mode === 'watch'"
-				routerLink="/main"
+		@if (mode === 'watch') {
+		<button routerLink="/main"
 				mat-icon-button>
 			<mat-icon>arrow_back</mat-icon>
 		</button>
+		}
 		<span>Nueva receta</span>
 		<span class="flex-space"></span>
-		<button *ngIf="mode === 'add'  || mode === 'edit'"
-				routerLink="/main"
+		@if (mode === 'add' || mode === 'edit') {
+		<button routerLink="/main"
 				mat-icon-button>
 			<mat-icon>cancel</mat-icon>
 		</button>
-		<button *ngIf="mode === 'watch'"
-				routerLink="/main"
+		}
+		@if (mode === 'watch') {
+		<button routerLink="/main"
 				mat-icon-button>
 			<mat-icon>share</mat-icon>
 		</button>
+		}
+		@if (mode === 'add' || mode === 'edit') {
 		<button *ngIf="mode === 'add'  || mode === 'edit'"
 				routerLink="/main"
 				class="right-button"
 				mat-icon-button>
 			<mat-icon>save</mat-icon>
 		</button>
-		<button *ngIf="mode === 'watch'"
-				routerLink="/main"
+		}
+		@if (mode === 'watch') {
+		<button routerLink="/main"
 				class="right-button"
 				mat-icon-button>
 			<mat-icon>edit</mat-icon>
 		</button>
+		}
 	</mat-toolbar-row>
 </mat-toolbar>
 

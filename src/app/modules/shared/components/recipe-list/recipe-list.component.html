@@ -1,11 +1,15 @@
 <mat-list>
-	<mat-list-item *ngFor="let recipe of recipes">
+	@for (recipe of recipes; track recipe.id) {
+	<mat-list-item>
 		<img [src]="recipe.image"
 			 matListAvatar
 			 [alt]="recipe.name">
 		<div matLine>{{ recipe.name }}</div>
 	</mat-list-item>
-	<mat-list-item *ngIf="recipes.length === 0">
+	}
+	@empty {
+	<mat-list-item>
 		No hay ninguna receta todavía. ¡Crea una!
 	</mat-list-item>
+	}
 </mat-list>

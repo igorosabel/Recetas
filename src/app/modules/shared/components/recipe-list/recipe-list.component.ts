@@ -7,7 +7,7 @@ import { MaterialModule } from 'src/app/modules/material/material.module';
   standalone: true,
   selector: 'rec-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.scss'],
+  styleUrls: [],
   imports: [CommonModule, MaterialModule],
 })
 export class RecipeListComponent {

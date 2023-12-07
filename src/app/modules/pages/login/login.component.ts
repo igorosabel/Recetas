@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginData } from 'src/app/interfaces/interfaces';
 import { MaterialModule } from 'src/app/modules/material/material.module';
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  doLogin(f: NgForm): void {
+  doLogin(): void {
     this.loginSending = true;
 
     this.as.login(this.loginData).subscribe((result) => {

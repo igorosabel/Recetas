@@ -1,6 +1,6 @@
 import { CdkDragEnd, DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
-import { Component, ComponentRef, OnInit } from '@angular/core';
+import { Component, ComponentRef } from '@angular/core';
 import { ModalPosition } from 'src/app/interfaces/interfaces';
 
 @Component({
@@ -10,16 +10,13 @@ import { ModalPosition } from 'src/app/interfaces/interfaces';
   styleUrls: ['./modal.component.scss'],
   imports: [CommonModule, DragDropModule],
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
   componentRef: ComponentRef<ModalComponent> = null;
   mode: string = 'new';
   dragging: boolean = false;
 
   animationTime: number = 2000;
   closePercentage: number = 60;
-
-  constructor() {}
-  ngOnInit(): void {}
 
   open(componentRef: ComponentRef<ModalComponent>): void {
     this.componentRef = componentRef;
